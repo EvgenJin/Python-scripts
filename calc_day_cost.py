@@ -15,7 +15,8 @@ while uinpt != 'n':
   days = np.busday_count(day1, day2)
   hour_cost = oklad / (days * 8)
   summ = (hour_cost*2*hours).round()
-  print("Цена выходного дня "+str(summ) + " руб. за " + str(hours) + " часов")
+  print("Цена выходного дня "+str(summ) + " руб. за " + str(hours) + " часов" + "; Рабочих дней в месяце: " + str(days))
+  #print("Рабочих дней в месяце: " + days )
   uinpt = input("Повторить расчет y/n ?")
 else:
     print("Хорошего дежурства!!")  
