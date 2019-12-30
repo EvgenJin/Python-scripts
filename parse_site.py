@@ -11,13 +11,13 @@ result = requests.get(url, headers=headers)
 # print(film_list)
 soup = BeautifulSoup(result.content, 'html.parser')
 main = soup.find('td',class_="detail_info")
-
-date_start = main.select('td')[1].get_text()
-date_end = main.select('td')[3].get_text()
-model = main.select('td')[5].get_text() #main.select('td')[7]
-gen = main.select('td')[9].get_text()
-id = main.select('td')[11].get_text()
-hdd = main.select('td')[17].get_text()
+date_start = main.select('td')[1]
+date_end = main.select('td')[3]
+model = main.select('td')[5] #main.select('td')[7]
+gen = main.select('td')[9]
+id = main.select('td')[11]
+ram = main.select('td')[14]
+hdd = main.select('td')[17]
 url_details = 'https://everymac.com' + main.find('a', href=True)['href']
 
 result_next = requests.get(url_details, headers=headers)
@@ -33,11 +33,10 @@ gb3_64_mc = el_arr[26].get_text() + ' ' + el_arr[27].get_text()
 gb4_sc = el_arr[30].get_text() + ' ' + el_arr[31].get_text() 
 gb4_mc = el_arr[32].get_text() + ' ' + el_arr[33].get_text() 
 cpu_speed = el_arr[37].get_text() 
-cpu_type = el_arr[39].get_text() 
-ram_type = el_arr[73].get_text()
-ram_freq = el_arr[75].get_text()
-max_ram = el_arr[81].get_text()
+cpu_type = el_arr[39].get_text()
+# print(gb4)
 
+manufactory_date = el_arr[13].get_text()
 
 
 # print(manufactory_date.get_text())
