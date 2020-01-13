@@ -37,9 +37,9 @@ with_zp = df[df['salary.from'] > 0][['name','employer.name','salary.from','salar
 without_zp = df[['name','employer.name','salary.from','salary.to','published_at','alternate_url']]
 # без зарплаты , но новые 
 without_zp_new = df[df['published_at'] >= str(new)][['name','employer.name','salary.from','salary.to','published_at','alternate_url']]
-#without_zp_new.to_excel("output.xlsx")
-print(without_zp_new)
-#print(df[(df['salary.from'] > 0) & (df['salary.to'] > 0)][['name','employer.name','salary.from','salary.to','published_at','alternate_url','snippet.requirement','snippet.responsibility']])
+without_zp_new.to_excel("output.xlsx")
+# print(without_zp_new)
+# print(df[(df['salary.from'] > 0) & (df['salary.to'] > 0)][['name','employer.name','salary.from','salary.to','published_at','alternate_url','snippet.requirement','snippet.responsibility']])
 # print(df[df['salary.from'] > 0][['name','employer.name','salary.from','salary.to','published_at','alternate_url']])
 # print(df[['name','employer.name','salary.from','salary.to','published_at','alternate_url']])
 #print(df.agg({'salary.from':['mean','median','count']}))
